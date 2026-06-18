@@ -165,6 +165,248 @@
     .field-error {
       border-color: #ff4d4d !important;
     }
+    /* Senior mobile/tablet polish */
+    .hamburger-icon {
+      display: inline-grid;
+      gap: 5px;
+      width: 22px;
+    }
+
+    .hamburger-icon span {
+      display: block;
+      height: 2px;
+      width: 100%;
+      border-radius: 999px;
+      background: currentColor;
+      transition: transform .22s ease, opacity .22s ease;
+    }
+
+    #menuBtn.is-open .hamburger-icon span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    #menuBtn.is-open .hamburger-icon span:nth-child(2) {
+      opacity: 0;
+    }
+
+    #menuBtn.is-open .hamburger-icon span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    #mobileMenu a {
+      border-radius: 1rem;
+      padding: .85rem 1rem;
+    }
+
+    #mobileMenu a:not(:last-child) {
+      background: rgba(255,255,255,.035);
+    }
+
+    #why article {
+      min-height: 100%;
+    }
+
+    #why article > span {
+      display: inline-grid;
+      height: 2.65rem;
+      width: 2.65rem;
+      place-items: center;
+      border-radius: 999px;
+      border: 1px solid rgba(185,255,24,.22);
+      background: rgba(185,255,24,.09);
+      font-size: 1.05rem;
+      line-height: 1;
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      #why .mt-12.grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      #why article:last-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 639px) {
+      #navbar nav {
+        padding-top: .8rem;
+        padding-bottom: .8rem;
+      }
+
+      #menuBtn {
+        height: 2.75rem;
+        width: 2.75rem;
+        color: #f5f7ef;
+        background: rgba(255,255,255,.045);
+      }
+
+      #mobileMenu {
+        max-height: calc(100vh - 4.5rem);
+        overflow-y: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      #why .mt-12.grid {
+        margin-top: 2rem;
+        gap: .85rem;
+      }
+
+      #why article {
+        border-radius: 1.35rem;
+        padding: 1.25rem;
+      }
+
+      #why article h3 {
+        margin-top: 1rem;
+        font-size: 1.08rem;
+        line-height: 1.22;
+      }
+
+      #why article p {
+        margin-top: .65rem;
+        font-size: .92rem;
+        line-height: 1.65;
+      }
+
+      .floating-social {
+        display: none !important;
+      }
+    }
+    /* Responsive hardening */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    img, video, iframe {
+      max-width: 100%;
+    }
+
+    a, button, input, select, textarea {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button, a {
+      touch-action: manipulation;
+    }
+
+    h1, h2, h3, p, a, button, span, li {
+      overflow-wrap: anywhere;
+    }
+
+    .hero-shell {
+      min-height: 610px;
+    }
+
+    .hero-figure {
+      height: 650px;
+      max-width: 820px;
+    }
+
+    @media (max-width: 1023px) {
+      .section-pad {
+        padding: 4rem 0;
+      }
+
+      .fit-stat {
+        display: none !important;
+      }
+
+      .tablet-stack {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    @media (max-width: 767px) {
+      body {
+        background:
+          radial-gradient(circle at 50% 2%, rgba(185, 255, 24, .12), transparent 20rem),
+          #050604;
+      }
+
+      .fit-hero {
+        min-height: clamp(690px, 180vw, 780px);
+      }
+
+      .hero-shell {
+        min-height: clamp(560px, 150vw, 660px);
+      }
+
+      .hero-figure {
+        height: clamp(470px, 122vw, 610px);
+        max-width: min(100vw, 640px);
+      }
+
+      .hero-figure img {
+        height: 108% !important;
+        width: 128% !important;
+      }
+
+      .fit-hero-title {
+        font-size: clamp(2.55rem, 15vw, 4.8rem);
+        line-height: .9;
+        letter-spacing: -.04em;
+      }
+    }
+
+    @media (max-width: 639px) {
+      .section-pad {
+        padding: 3.25rem 0;
+      }
+
+      nav img {
+        height: 2.5rem !important;
+      }
+
+      nav span span:first-child {
+        font-size: .72rem;
+        letter-spacing: .18em;
+      }
+
+      nav span span:last-child {
+        font-size: .58rem;
+        letter-spacing: .18em;
+      }
+
+      .fit-hero-title {
+        margin-top: 2.25rem;
+        max-width: 22rem;
+        text-align: left;
+      }
+
+      .mobile-hero-proof {
+        bottom: 1.25rem !important;
+        left: 1rem !important;
+        right: 1rem !important;
+        justify-content: center;
+      }
+
+      .mobile-hero-proof b {
+        font-size: 1.75rem;
+      }
+
+      .before-after {
+        height: min(118vw, 430px) !important;
+      }
+
+      .price-toggle-wrap {
+        width: 100%;
+        overflow-x: auto;
+        border-radius: 1.5rem;
+      }
+
+      .price-toggle-wrap button {
+        flex: 1 0 auto;
+        white-space: nowrap;
+      }
+
+      .floating-social {
+        height: 3.5rem !important;
+        width: 3.5rem !important;
+        font-size: 1.15rem !important;
+      }
+    }
   </style>
 </head>
 <body class="noise overflow-x-hidden">
@@ -201,8 +443,8 @@
         </a>
       </div>
     
-      <button id="menuBtn" class="grid h-11 w-11 place-items-center rounded-full border border-white/10 lg:hidden" aria-label="Open menu">
-        <span class="text-2xl leading-none">≡</span>
+      <button id="menuBtn" class="grid h-11 w-11 place-items-center rounded-full border border-white/10 lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="hamburger-icon" aria-hidden="true"><span></span><span></span><span></span></span>
       </button>
     </nav>
     <div id="mobileMenu" class="hidden border-t border-white/10 bg-carbon/95 px-4 pb-5 lg:hidden">
@@ -227,7 +469,7 @@
       <div class="absolute left-6 top-[42%] z-20 hidden text-xl font-light text-white/70 md:block fit-side-text">PREV</div>
       <div class="absolute right-6 top-[42%] z-20 hidden text-xl font-light text-white/70 md:block fit-side-text">NEXT</div>
       
-      <div class="relative mx-auto flex min-h-[610px] max-w-7xl flex-col px-4 sm:px-6 lg:px-8">
+      <div class="hero-shell relative mx-auto flex max-w-7xl flex-col px-4 sm:px-6 lg:px-8">
         <div class="relative z-10 mt-2 flex items-center justify-between gap-4 md:hidden">
           <a href="#contact" class="rounded-full bg-volt px-5 py-3 text-xs font-black text-black">Call Now</a>
           <a href="#trial" class="rounded-full border border-volt/30 px-5 py-3 text-xs font-black text-volt">Book Consultation</a>
@@ -235,34 +477,34 @@
           PERSONAL <span class="shadow-word">TRAINING</span><br>
           FOR THE <span class="shadow-word">GODS</span>
         </h1>
-        <div class="absolute inset-x-0 bottom-0 z-10 mx-auto h-[650px] max-w-[820px] md:h-[740px]">
+        <div class="hero-figure absolute inset-x-0 bottom-0 z-10 mx-auto md:h-[740px]">
           <div class="absolute left-1/2 top-12 h-96 w-96 -translate-x-1/2 rounded-full bg-white/12 blur-3xl"></div>
           <img class="absolute bottom-0 left-1/2 h-[112%] w-[112%] -translate-x-1/2 object-contain object-bottom grayscale contrast-125 drop-shadow-[0_35px_60px_rgba(0,0,0,.9)] md:h-[118%] md:w-[118%]" src="hero-athlete.png" alt="Lift Well Club Personal Training">
         </div>
 
         <div class="fit-stat absolute left-[28%] top-[39%] z-20 hidden -rotate-[24deg] rounded-[2rem] px-5 py-6 text-center md:block">
-          <span class="fit-stat-icon mx-auto grid h-10 w-10 place-items-center rounded-full text-xl font-black">◷</span>
+          <span class="fit-stat-icon mx-auto grid h-10 w-10 place-items-center rounded-full text-xl font-black">&#9655;</span>
           <span class="mt-2 block text-xs font-semibold text-white/78">Coaching</span>
           <b class="block text-2xl font-black text-white">1:1</b>
         </div>
         <div class="fit-stat absolute right-[25%] top-[38%] z-20 hidden rotate-[22deg] rounded-[2rem] px-5 py-6 text-center md:block">
-          <span class="fit-stat-icon mx-auto grid h-10 w-10 place-items-center rounded-full text-xl font-black">↗</span>
+          <span class="fit-stat-icon mx-auto grid h-10 w-10 place-items-center rounded-full text-xl font-black">&#8599;</span>
           <span class="mt-2 block text-xs font-semibold text-white/78">HYROX</span>
           <b class="block text-2xl font-black text-white">Club</b>
         </div>
         <div class="fit-stat absolute right-[20%] bottom-[19%] z-20 hidden rotate-[18deg] rounded-[2rem] px-5 py-6 text-center md:block">
-          <span class="fit-stat-icon mx-auto grid h-10 w-10 place-items-center rounded-full text-xl font-black">✽</span>
+          <span class="fit-stat-icon mx-auto grid h-10 w-10 place-items-center rounded-full text-xl font-black">&#10045;</span>
           <span class="mt-2 block text-xs font-semibold text-white/78">Results</span>
           <b class="block text-2xl font-black text-white">Focused</b>
         </div>
         
         <div class="fit-stat absolute left-[27%] bottom-[18%] z-20 hidden -rotate-[20deg] rounded-[2rem] px-5 py-6 text-center md:block">
-          <span class="fit-stat-icon mx-auto grid h-10 w-10 place-items-center rounded-full text-xl font-black">♨</span>
+          <span class="fit-stat-icon mx-auto grid h-10 w-10 place-items-center rounded-full text-xl font-black">&#9832;</span>
           <span class="mt-2 block text-xs font-semibold text-white/78">Sector</span>
           <b class="block text-2xl font-black text-white">9D</b>
         </div>
         
-        <div class="absolute bottom-16 left-4 z-20 flex items-center gap-4 sm:left-8 lg:left-14">
+        <div class="mobile-hero-proof absolute bottom-16 left-4 z-20 flex items-center gap-4 sm:left-8 lg:left-14">
           <div class="flex -space-x-4">
             <img class="h-12 w-12 rounded-full border-2 border-black object-cover grayscale" src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=120&q=80" alt="Lift Well Club Member">
             <img class="h-12 w-12 rounded-full border-2 border-black object-cover grayscale" src="https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?auto=format&fit=crop&w=120&q=80" alt="Lift Well Club Member">
@@ -274,8 +516,8 @@
           </div>
         </div>
 
-        <a href="#trial" class="lime-glow absolute bottom-16 right-4 z-20 rounded-full bg-volt px-7 py-5 text-sm font-black text-black transition hover:scale-105 sm:right-8 lg:right-14">
-          Let's Start › › ›
+        <a href="#trial" class="lime-glow absolute bottom-16 right-4 z-20 hidden rounded-full bg-volt px-7 py-5 text-sm font-black text-black transition hover:scale-105 sm:flex sm:right-8 lg:right-14">
+          Let's Start &rsaquo; &rsaquo; &rsaquo;
         </a>
       </div>
     </section>
@@ -293,24 +535,21 @@
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-3xl text-center">
           <p class="text-sm font-black uppercase tracking-[.3em] text-volt">Inspired to perform</p>
-          <h2 class="mt-4 text-4xl font-black tracking-tight sm:text-6xl">Discover What Sets Us Apart</h2>
+          <h2 class="mt-4 text-3xl font-black tracking-tight sm:text-5xl lg:text-6xl">Discover What Sets Us Apart</h2>
         </div>
         <div class="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-5">
-          <article class="glass rounded-3xl p-6 shadow-card"><span class="text-3xl text-volt">✓</span><h3 class="mt-5 text-xl font-black">Personal Training Only</h3><p class="mt-3 text-sm leading-6 text-white/58">Dedicated one-on-one coaching built around your goals, progress, and accountability.</p></article>
-          <article class="glass rounded-3xl p-6 shadow-card"><span class="text-3xl text-volt">◆</span><h3 class="mt-5 text-xl font-black">Official HYROX Club</h3><p class="mt-3 text-sm leading-6 text-white/58">Structured performance training designed for endurance, strength, and HYROX preparation.</p></article>
-          <article class="glass rounded-3xl p-6 shadow-card"><span class="text-3xl text-volt">▣</span><h3 class="mt-5 text-xl font-black">Transformation Focused</h3><p class="mt-3 text-sm leading-6 text-white/58">Every program is designed to deliver measurable fitness, strength, and body composition results.</p></article>
-          <article class="glass rounded-3xl p-6 shadow-card"><span class="text-3xl text-volt">◎</span><h3 class="mt-5 text-xl font-black">Mobility & Recovery</h3><p class="mt-3 text-sm leading-6 text-white/58">Movement quality, flexibility, and recovery work integrated into every training journey.</p></article>
-          <article class="glass rounded-3xl p-6 shadow-card"><span class="text-3xl text-volt">✦</span><h3 class="mt-5 text-xl font-black">Elite Environment</h3><p class="mt-3 text-sm leading-6 text-white/58">A premium coaching studio where serious individuals train with focus and purpose.</p></article>
+          <article class="glass rounded-3xl p-6 shadow-card"><span class="text-3xl text-volt">&#10003;</span><h3 class="mt-5 text-xl font-black">Personal Training Only</h3><p class="mt-3 text-sm leading-6 text-white/58">Dedicated one-on-one coaching built around your goals, progress, and accountability.</p></article>
+          <article class="glass rounded-3xl p-6 shadow-card"><span class="text-3xl text-volt">&#9670;</span><h3 class="mt-5 text-xl font-black">Official HYROX Club</h3><p class="mt-3 text-sm leading-6 text-white/58">Structured performance training designed for endurance, strength, and HYROX preparation.</p></article>
+          <article class="glass rounded-3xl p-6 shadow-card"><span class="text-3xl text-volt">&#9635;</span><h3 class="mt-5 text-xl font-black">Transformation Focused</h3><p class="mt-3 text-sm leading-6 text-white/58">Every program is designed to deliver measurable fitness, strength, and body composition results.</p></article>
+          <article class="glass rounded-3xl p-6 shadow-card"><span class="text-3xl text-volt">&#9678;</span><h3 class="mt-5 text-xl font-black">Mobility & Recovery</h3><p class="mt-3 text-sm leading-6 text-white/58">Movement quality, flexibility, and recovery work integrated into every training journey.</p></article>
+          <article class="glass rounded-3xl p-6 shadow-card"><span class="text-3xl text-volt">&#10022;</span><h3 class="mt-5 text-xl font-black">Elite Environment</h3><p class="mt-3 text-sm leading-6 text-white/58">A premium coaching studio where serious individuals train with focus and purpose.</p></article>
         </div>
       </div>
     </section>
 
     <section id="founder" class="section-pad bg-black/30">
-      <section id="founder" class="section-pad bg-black/30">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      
-      ```
-      <div class="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+<div class="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
       
         <div class="relative">
           <div class="absolute inset-0 rounded-[2rem] bg-volt/10 blur-3xl"></div>
@@ -320,7 +559,7 @@
             <img
               src="C:\Users\Administrator\Documents\Codex\2026-06-17\files-mentioned-by-the-user-whatsapp\outputs\assets\founder.jpeg"
               alt="Mayank Bhateja"
-              class="h-[760px] w-full object-cover grayscale"
+              class="h-[420px] w-full object-cover grayscale sm:h-[560px] lg:h-[760px]"
             >
       
             <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
@@ -335,7 +574,7 @@
               </h3>
       
               <p class="mt-2 text-white/70">
-                HYROX Athlete • Endurance Runner • Coach
+                HYROX Athlete &bull; Endurance Runner &bull; Coach
               </p>
             </div>
       
@@ -348,7 +587,7 @@
             The Story Behind The Club
           </p>
       
-          <h2 class="mt-4 text-4xl font-black leading-tight sm:text-6xl">
+          <h2 class="mt-4 text-3xl font-black leading-tight sm:text-5xl lg:text-6xl">
             Built By
             <span class="text-volt">Discipline.</span>
             <br>
@@ -424,25 +663,21 @@
             </div>
       
             <div class="mt-2 text-sm font-black uppercase tracking-[.25em] text-volt">
-              Founder • The Lift Well Club
+              Founder &bull; The Lift Well Club
             </div>
           </div>
       
         </div>
       
       </div>
-      ```
-      
         </div>
       </section>
-      
-</section>
 
 
     <section id="programs" class="section-pad bg-black/30">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <div><p class="text-sm font-black uppercase tracking-[.3em] text-volt">Train smarter</p><h2 class="mt-4 text-4xl font-black sm:text-6xl">Unleash Your Potential</h2></div>
+          <div><p class="text-sm font-black uppercase tracking-[.3em] text-volt">Train smarter</p><h2 class="mt-4 text-3xl font-black sm:text-5xl lg:text-6xl">Unleash Your Potential</h2></div>
           <a href="#trial" class="rounded-full border border-volt/40 px-6 py-3 text-sm font-black text-volt">Start With A Trial</a>
         </div>
         <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -461,7 +696,7 @@
         <div class="grid gap-10 lg:grid-cols-[.85fr_1.15fr] lg:items-center">
           <div>
             <p class="text-sm font-black uppercase tracking-[.3em] text-volt">Experience fitness like never before</p>
-            <h2 class="mt-4 text-4xl font-black sm:text-6xl">Real Transformations. Serious Proof.</h2>
+            <h2 class="mt-4 text-3xl font-black sm:text-5xl lg:text-6xl">Real Transformations. Serious Proof.</h2>
             <p class="mt-6 text-white/62">Slide to compare an 18-week body recomposition journey backed by coaching, strength work, meal guidance, and weekly accountability.</p>
             <a href="#trial" class="mt-8 inline-flex rounded-full bg-volt px-7 py-4 text-sm font-black uppercase text-black">Start Your Story</a>
           </div>
@@ -477,39 +712,39 @@
         <div class="mt-10 grid gap-5 md:grid-cols-3">
           <div class="glass rounded-3xl p-6"><b class="text-2xl">-24 kg</b><p class="mt-2 text-sm text-white/58">Aarav rebuilt his lifestyle in 6 months with strength-first fat loss.</p></div>
           <div class="glass rounded-3xl p-6"><b class="text-2xl">+9 kg muscle</b><p class="mt-2 text-sm text-white/58">Rohan moved from inconsistent training to structured hypertrophy.</p></div>
-          <div class="glass rounded-3xl p-6"><b class="text-2xl">3 dress sizes</b><p class="mt-2 text-sm text-white/58">Nisha transformed through women’s strength and nutrition support.</p></div>
+          <div class="glass rounded-3xl p-6"><b class="text-2xl">3 dress sizes</b><p class="mt-2 text-sm text-white/58">Nisha transformed through women's strength and nutrition support.</p></div>
         </div>
       </div>
     </section>
 
     <section id="facility" class="section-pad bg-black/30">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="text-center"><p class="text-sm font-black uppercase tracking-[.3em] text-volt">Premium facility showcase</p><h2 class="mt-4 text-4xl font-black sm:text-6xl">Train Inside A Destination</h2></div>
+        <div class="text-center"><p class="text-sm font-black uppercase tracking-[.3em] text-volt">Premium facility showcase</p><h2 class="mt-4 text-3xl font-black sm:text-5xl lg:text-6xl">Train Inside A Destination</h2></div>
         <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <button class="gallery group overflow-hidden rounded-3xl" data-img="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=85"><img class="h-72 w-full object-cover grayscale transition group-hover:scale-105 group-hover:grayscale-0" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=700&q=80" alt="Premium gym gallery"></button>
-          <button class="gallery group overflow-hidden rounded-3xl" data-img="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1200&q=85"><img class="h-72 w-full object-cover grayscale transition group-hover:scale-105 group-hover:grayscale-0" src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=700&q=80" alt="Equipment zone"></button>
-          <button class="gallery group overflow-hidden rounded-3xl" data-img="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=1200&q=85"><img class="h-72 w-full object-cover grayscale transition group-hover:scale-105 group-hover:grayscale-0" src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=700&q=80" alt="Workout zone"></button>
-          <button class="gallery group overflow-hidden rounded-3xl" data-img="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=1200&q=85"><img class="h-72 w-full object-cover grayscale transition group-hover:scale-105 group-hover:grayscale-0" src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=700&q=80" alt="Locker room inspired facility"></button>
+          <button class="gallery group overflow-hidden rounded-3xl" data-img="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=85"><img class="h-60 w-full object-cover grayscale transition sm:h-72 group-hover:scale-105 group-hover:grayscale-0" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=700&q=80" alt="Premium gym gallery"></button>
+          <button class="gallery group overflow-hidden rounded-3xl" data-img="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1200&q=85"><img class="h-60 w-full object-cover grayscale transition sm:h-72 group-hover:scale-105 group-hover:grayscale-0" src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=700&q=80" alt="Equipment zone"></button>
+          <button class="gallery group overflow-hidden rounded-3xl" data-img="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=1200&q=85"><img class="h-60 w-full object-cover grayscale transition sm:h-72 group-hover:scale-105 group-hover:grayscale-0" src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?auto=format&fit=crop&w=700&q=80" alt="Workout zone"></button>
+          <button class="gallery group overflow-hidden rounded-3xl" data-img="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=1200&q=85"><img class="h-60 w-full object-cover grayscale transition sm:h-72 group-hover:scale-105 group-hover:grayscale-0" src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=700&q=80" alt="Locker room inspired facility"></button>
         </div>
       </div>
     </section>
 
     <section id="trainers" class="section-pad">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="text-center"><p class="text-sm font-black uppercase tracking-[.3em] text-volt">Expert coaching. Real accountability.</p><h2 class="mt-4 text-4xl font-black sm:text-6xl">Meet The Coach</h2></div>
+        <div class="text-center"><p class="text-sm font-black uppercase tracking-[.3em] text-volt">Expert coaching. Real accountability.</p><h2 class="mt-4 text-3xl font-black sm:text-5xl lg:text-6xl">Meet The Coach</h2></div>
     
         <div class="mt-12 grid gap-5 md:grid-cols-3">
     
           <button class="trainer glass overflow-hidden rounded-[1.8rem] text-left shadow-card" data-name="Personal Training Coach" data-cert="Transformation Specialist" data-exp="Lift Well Club" data-bio="Focused on personalized coaching, strength development, body composition improvement, and long-term transformation results.">
-            <img class="h-80 w-full object-cover grayscale" src="C:\Users\Administrator\Documents\Codex\2026-06-17\files-mentioned-by-the-user-whatsapp\outputs\assets\train coach.jpeg" alt="Personal Training Coach"><div class="p-6"><h3 class="text-2xl font-black">Personal Training Coach</h3><p class="mt-2 text-volt">Transformation Specialist</p></div>
+            <img class="h-72 w-full object-cover grayscale sm:h-80" src="C:\Users\Administrator\Documents\Codex\2026-06-17\files-mentioned-by-the-user-whatsapp\outputs\assets\train coach.jpeg" alt="Personal Training Coach"><div class="p-6"><h3 class="text-2xl font-black">Personal Training Coach</h3><p class="mt-2 text-volt">Transformation Specialist</p></div>
           </button>
     
           <button class="trainer glass overflow-hidden rounded-[1.8rem] text-left shadow-card" data-name="Strength & Mobility Coach" data-cert="Movement Specialist" data-exp="Lift Well Club" data-bio="Helping members improve strength, mobility, movement quality, recovery, and overall physical performance.">
-            <img class="h-80 w-full object-cover grayscale" src="C:\Users\Administrator\Documents\Codex\2026-06-17\files-mentioned-by-the-user-whatsapp\outputs\assets\strengh coach.jpeg" alt="Strength and Mobility Coach"><div class="p-6"><h3 class="text-2xl font-black">Strength & Mobility Coach</h3><p class="mt-2 text-volt">Movement Specialist</p></div>
+            <img class="h-72 w-full object-cover grayscale sm:h-80" src="C:\Users\Administrator\Documents\Codex\2026-06-17\files-mentioned-by-the-user-whatsapp\outputs\assets\strengh coach.jpeg" alt="Strength and Mobility Coach"><div class="p-6"><h3 class="text-2xl font-black">Strength & Mobility Coach</h3><p class="mt-2 text-volt">Movement Specialist</p></div>
           </button>
     
           <button class="trainer glass overflow-hidden rounded-[1.8rem] text-left shadow-card" data-name="HYROX Performance Coach" data-cert="Performance Coach" data-exp="Lift Well Club" data-bio="Specialized coaching focused on endurance, conditioning, strength, and HYROX performance preparation.">
-            <img class="h-80 w-full object-cover grayscale" src="C:\Users\Administrator\Documents\Codex\2026-06-17\files-mentioned-by-the-user-whatsapp\outputs\assets\about coach hyrox.jpeg" alt="HYROX Performance Coach"><div class="p-6"><h3 class="text-2xl font-black">HYROX Performance Coach</h3><p class="mt-2 text-volt">Performance Coach</p></div>
+            <img class="h-72 w-full object-cover grayscale sm:h-80" src="C:\Users\Administrator\Documents\Codex\2026-06-17\files-mentioned-by-the-user-whatsapp\outputs\assets\about coach hyrox.jpeg" alt="HYROX Performance Coach"><div class="p-6"><h3 class="text-2xl font-black">HYROX Performance Coach</h3><p class="mt-2 text-volt">Performance Coach</p></div>
           </button>
     
         </div>
@@ -518,29 +753,29 @@
     <section id="membership" class="section-pad bg-black/30">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <div><p class="text-sm font-black uppercase tracking-[.3em] text-volt">Membership</p><h2 class="mt-4 text-4xl font-black sm:text-6xl">Choose Your Level</h2></div>
-          <div class="glass inline-flex rounded-full p-1">
+          <div><p class="text-sm font-black uppercase tracking-[.3em] text-volt">Membership</p><h2 class="mt-4 text-3xl font-black sm:text-5xl lg:text-6xl">Choose Your Level</h2></div>
+          <div class="price-toggle-wrap glass inline-flex rounded-full p-1">
             <button class="price-toggle rounded-full bg-volt px-5 py-3 text-sm font-black text-black" data-period="monthly">Monthly</button>
             <button class="price-toggle rounded-full px-5 py-3 text-sm font-black text-white/60" data-period="quarterly">Quarterly</button>
             <button class="price-toggle rounded-full px-5 py-3 text-sm font-black text-white/60" data-period="annual">Annual</button>
           </div>
         </div>
         <div class="mt-12 grid gap-5 lg:grid-cols-3">
-          <article class="glass rounded-[2rem] p-8 shadow-card"><h3 class="text-2xl font-black">Starter</h3><p class="mt-3 text-white/55">Premium floor access for consistent self-training.</p><div class="mt-7"><span class="price text-5xl font-black" data-monthly="3499" data-quarterly="8999" data-annual="29999">₹3,499</span><span class="text-white/45"> / plan</span></div><ul class="mt-7 space-y-3 text-sm text-white/65"><li>✓ Gym access</li><li>✓ Fitness assessment</li><li>✓ Group classes</li><li>✓ Locker access</li></ul><a href="#trial" class="mt-8 block rounded-full border border-white/12 px-6 py-4 text-center font-black">Start Trial</a></article>
-          <article class="relative rounded-[2rem] bg-volt p-8 text-black shadow-premium"><span class="absolute right-6 top-6 rounded-full bg-black px-4 py-2 text-xs font-black uppercase text-volt">Most Popular</span><h3 class="text-2xl font-black">Premium</h3><p class="mt-3 text-black/65">Coached transformation plan with high accountability.</p><div class="mt-7"><span class="price text-5xl font-black" data-monthly="6499" data-quarterly="16999" data-annual="54999">₹6,499</span><span class="text-black/55"> / plan</span></div><ul class="mt-7 space-y-3 text-sm font-semibold text-black/70"><li>✓ Everything in Starter</li><li>✓ 4 PT sessions/month</li><li>✓ Nutrition plan</li><li>✓ Progress tracking</li></ul><a href="#trial" class="mt-8 block rounded-full bg-black px-6 py-4 text-center font-black text-white">Book Premium Trial</a></article>
-          <article class="glass rounded-[2rem] p-8 shadow-card"><h3 class="text-2xl font-black">Elite</h3><p class="mt-3 text-white/55">Private coaching, priority slots, and executive support.</p><div class="mt-7"><span class="price text-5xl font-black" data-monthly="11999" data-quarterly="31999" data-annual="99999">₹11,999</span><span class="text-white/45"> / plan</span></div><ul class="mt-7 space-y-3 text-sm text-white/65"><li>✓ Unlimited PT coaching</li><li>✓ Body composition scans</li><li>✓ Recovery guidance</li><li>✓ VIP consultation</li></ul><a href="#contact" class="mt-8 block rounded-full border border-volt/50 px-6 py-4 text-center font-black text-volt">Talk To Advisor</a></article>
+          <article class="glass rounded-[2rem] p-8 shadow-card"><h3 class="text-2xl font-black">Starter</h3><p class="mt-3 text-white/55">Premium floor access for consistent self-training.</p><div class="mt-7"><span class="price text-4xl font-black sm:text-5xl" data-monthly="3499" data-quarterly="8999" data-annual="29999">&#8377;3,499</span><span class="text-white/45"> / plan</span></div><ul class="mt-7 space-y-3 text-sm text-white/65"><li>&#10003; Gym access</li><li>&#10003; Fitness assessment</li><li>&#10003; Group classes</li><li>&#10003; Locker access</li></ul><a href="#trial" class="mt-8 block rounded-full border border-white/12 px-6 py-4 text-center font-black">Start Trial</a></article>
+          <article class="relative rounded-[2rem] bg-volt p-8 text-black shadow-premium"><span class="absolute right-6 top-6 rounded-full bg-black px-4 py-2 text-xs font-black uppercase text-volt">Most Popular</span><h3 class="text-2xl font-black">Premium</h3><p class="mt-3 text-black/65">Coached transformation plan with high accountability.</p><div class="mt-7"><span class="price text-4xl font-black sm:text-5xl" data-monthly="6499" data-quarterly="16999" data-annual="54999">&#8377;6,499</span><span class="text-black/55"> / plan</span></div><ul class="mt-7 space-y-3 text-sm font-semibold text-black/70"><li>&#10003; Everything in Starter</li><li>&#10003; 4 PT sessions/month</li><li>&#10003; Nutrition plan</li><li>&#10003; Progress tracking</li></ul><a href="#trial" class="mt-8 block rounded-full bg-black px-6 py-4 text-center font-black text-white">Book Premium Trial</a></article>
+          <article class="glass rounded-[2rem] p-8 shadow-card"><h3 class="text-2xl font-black">Elite</h3><p class="mt-3 text-white/55">Private coaching, priority slots, and executive support.</p><div class="mt-7"><span class="price text-4xl font-black sm:text-5xl" data-monthly="11999" data-quarterly="31999" data-annual="99999">&#8377;11,999</span><span class="text-white/45"> / plan</span></div><ul class="mt-7 space-y-3 text-sm text-white/65"><li>&#10003; Unlimited PT coaching</li><li>&#10003; Body composition scans</li><li>&#10003; Recovery guidance</li><li>&#10003; VIP consultation</li></ul><a href="#contact" class="mt-8 block rounded-full border border-volt/50 px-6 py-4 text-center font-black text-volt">Talk To Advisor</a></article>
         </div>
       </div>
     </section>
 
     <section class="section-pad">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="text-center"><p class="text-sm font-black uppercase tracking-[.3em] text-volt">Member reviews</p><h2 class="mt-4 text-4xl font-black sm:text-6xl">Your Success Stories</h2></div>
+        <div class="text-center"><p class="text-sm font-black uppercase tracking-[.3em] text-volt">Member reviews</p><h2 class="mt-4 text-3xl font-black sm:text-5xl lg:text-6xl">Your Success Stories</h2></div>
         <div class="relative mx-auto mt-12 max-w-4xl overflow-hidden rounded-[2rem] border border-white/10 bg-ash shadow-card">
           <div id="testimonialTrack" class="flex transition-transform duration-500">
-            <article class="min-w-full p-8 sm:p-12"><p class="text-2xl font-bold leading-relaxed">“The coaching feels premium from day one. I lost 18 kg, gained confidence, and finally enjoy training.”</p><div class="mt-8 text-volt font-black">Priya S. • Premium Member</div></article>
-            <article class="min-w-full p-8 sm:p-12"><p class="text-2xl font-bold leading-relaxed">“ForgeFit is not a regular gym. The trainers track everything and the facility feels world-class.”</p><div class="mt-8 text-volt font-black">Aniket R. • Elite Member</div></article>
-            <article class="min-w-full p-8 sm:p-12"><p class="text-2xl font-bold leading-relaxed">“Best investment I made this year. Stronger, leaner, more disciplined, and the community is exceptional.”</p><div class="mt-8 text-volt font-black">Meera K. • Transformation Program</div></article>
+            <article class="min-w-full p-8 sm:p-12"><p class="text-xl font-bold leading-relaxed sm:text-2xl">&ldquo;The coaching feels premium from day one. I lost 18 kg, gained confidence, and finally enjoy training.&rdquo;</p><div class="mt-8 text-volt font-black">Priya S. &bull; Premium Member</div></article>
+            <article class="min-w-full p-8 sm:p-12"><p class="text-xl font-bold leading-relaxed sm:text-2xl">&ldquo;ForgeFit is not a regular gym. The trainers track everything and the facility feels world-class.&rdquo;</p><div class="mt-8 text-volt font-black">Aniket R. &bull; Elite Member</div></article>
+            <article class="min-w-full p-8 sm:p-12"><p class="text-xl font-bold leading-relaxed sm:text-2xl">&ldquo;Best investment I made this year. Stronger, leaner, more disciplined, and the community is exceptional.&rdquo;</p><div class="mt-8 text-volt font-black">Meera K. &bull; Transformation Program</div></article>
           </div>
         </div>
       </div>
@@ -573,7 +808,7 @@
 
     <section id="faq" class="section-pad">
       <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div class="text-center"><p class="text-sm font-black uppercase tracking-[.3em] text-volt">Questions</p><h2 class="mt-4 text-4xl font-black sm:text-6xl">FAQ</h2></div>
+        <div class="text-center"><p class="text-sm font-black uppercase tracking-[.3em] text-volt">Questions</p><h2 class="mt-4 text-3xl font-black sm:text-5xl lg:text-6xl">FAQ</h2></div>
     
         <div class="mt-10 space-y-4">
     
@@ -626,7 +861,7 @@
     
         <div id="trial" class="rounded-[2rem] bg-volt p-8 text-black shadow-premium sm:p-10">
           <p class="text-sm font-black uppercase tracking-[.28em]">Connect. Train. Transform.</p>
-          <h2 class="mt-4 text-4xl font-black sm:text-6xl">Book Your Consultation</h2>
+          <h2 class="mt-4 text-3xl font-black sm:text-5xl lg:text-6xl">Book Your Consultation</h2>
     
           <form id="trialForm" class="mt-8 grid gap-4">
             <div class="grid gap-4 sm:grid-cols-2">
@@ -657,7 +892,7 @@
         </div>
     
         <div class="glass rounded-[2rem] p-8 shadow-card sm:p-10">
-          <h3 class="text-3xl font-black">Visit The Club</h3>
+          <h3 class="text-2xl font-black sm:text-3xl">Visit The Club</h3>
     
           <div class="mt-6 space-y-5 text-white/65">
             <p><b class="text-white">Call:</b> +91 96543 46954</p>
@@ -698,7 +933,7 @@ rel="noopener">
     <section class="px-4 py-16 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-7xl rounded-[2rem] bg-volt p-8 text-center text-black shadow-premium sm:p-14">
     
-        <h2 class="text-4xl font-black sm:text-6xl">
+        <h2 class="text-3xl font-black sm:text-5xl lg:text-6xl">
           Start Your Transformation Today.
         </h2>
     
@@ -722,7 +957,7 @@ rel="noopener">
     </section>
     </main>
 
-  <<footer class="border-t border-white/10 bg-[#080a05] py-12">
+  <footer class="border-t border-white/10 bg-[#080a05] py-12">
     <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 md:grid-cols-4 lg:px-8">
   
       <div>
@@ -764,20 +999,20 @@ rel="noopener">
     </div>
   
     <p class="mx-auto mt-10 max-w-7xl px-4 text-xs text-white/35 sm:px-6 lg:px-8">
-      © 2026 THE LIFT WELL CLUB. Personal Training For The GODS.
+      &copy; 2026 THE LIFT WELL CLUB. Personal Training For The GODS.
     </p>
   </footer>
   
-  <a class="lime-glow fixed bottom-5 right-5 z-40 grid h-16 w-16 place-items-center rounded-full bg-volt text-2xl font-black text-black" href="https://www.instagram.com/theliftwellclub" target="_blank" rel="noopener" aria-label="Visit Instagram">IG</a>
+  <a class="floating-social lime-glow fixed bottom-5 right-5 z-40 grid h-16 w-16 place-items-center rounded-full bg-volt text-2xl font-black text-black" href="https://www.instagram.com/theliftwellclub" target="_blank" rel="noopener" aria-label="Visit Instagram">IG</a>
   
   <div id="trainerModal" class="fixed inset-0 z-50 hidden place-items-center bg-black/80 p-4">
     <div class="glass max-w-lg rounded-[2rem] p-8 shadow-premium">
       <div class="flex items-start justify-between gap-6">
         <div>
-          <h3 id="modalName" class="text-3xl font-black"></h3>
+          <h3 id="modalName" class="text-2xl font-black sm:text-3xl"></h3>
           <p id="modalMeta" class="mt-2 text-volt font-bold"></p>
         </div>
-        <button id="closeModal" class="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-2xl">×</button>
+        <button id="closeModal" class="grid h-10 w-10 place-items-center rounded-full border border-white/10 text-2xl">&times;</button>
       </div>
   
       <p id="modalBio" class="mt-6 text-white/65"></p>
@@ -789,7 +1024,7 @@ rel="noopener">
   </div>
   
   <div id="lightbox" class="fixed inset-0 z-50 hidden place-items-center bg-black/90 p-4">
-    <button id="closeLightbox" class="absolute right-6 top-6 grid h-12 w-12 place-items-center rounded-full bg-white/10 text-3xl">×</button>
+    <button id="closeLightbox" class="absolute right-6 top-6 grid h-12 w-12 place-items-center rounded-full bg-white/10 text-3xl">&times;</button>
     <img id="lightboxImg" class="max-h-[86vh] max-w-5xl rounded-3xl object-contain shadow-premium" alt="Expanded gym gallery image">
   </div>
 
@@ -802,8 +1037,17 @@ rel="noopener">
     window.addEventListener('scroll', onScroll);
     onScroll();
 
-    $('#menuBtn').addEventListener('click', () => $('#mobileMenu').classList.toggle('hidden'));
-    $$('#mobileMenu a').forEach(a => a.addEventListener('click', () => $('#mobileMenu').classList.add('hidden')));
+    $('#menuBtn').addEventListener('click', () => {
+      const menu = $('#mobileMenu');
+      const open = menu.classList.toggle('hidden') === false;
+      $('#menuBtn').classList.toggle('is-open', open);
+      $('#menuBtn').setAttribute('aria-expanded', String(open));
+    });
+    $$('#mobileMenu a').forEach(a => a.addEventListener('click', () => {
+      $('#mobileMenu').classList.add('hidden');
+      $('#menuBtn').classList.remove('is-open');
+      $('#menuBtn').setAttribute('aria-expanded', 'false');
+    }));
 
     const counterObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -828,7 +1072,7 @@ rel="noopener">
     const baRange = $('#baRange');
     baRange.addEventListener('input', e => $('#baBox').style.setProperty('--pos', `${e.target.value}%`));
 
-    const formatPrice = value => `₹${Number(value).toLocaleString('en-IN')}`;
+    const formatPrice = value => `\u20B9${Number(value).toLocaleString('en-IN')}`;
     $$('.price-toggle').forEach(btn => btn.addEventListener('click', () => {
       $$('.price-toggle').forEach(b => { b.classList.remove('bg-volt', 'text-black'); b.classList.add('text-white/60'); });
       btn.classList.add('bg-volt', 'text-black');
@@ -841,7 +1085,7 @@ rel="noopener">
       const open = !panel.classList.contains('hidden');
       $$('.faqPanel').forEach(p => p.classList.add('hidden'));
       $$('.faqBtn span').forEach(s => s.textContent = '+');
-      if (!open) { panel.classList.remove('hidden'); btn.querySelector('span').textContent = '−'; }
+      if (!open) { panel.classList.remove('hidden'); btn.querySelector('span').textContent = '-'; }
     }));
 
     let testimonial = 0;
@@ -852,7 +1096,7 @@ rel="noopener">
 
     $$('.trainer').forEach(card => card.addEventListener('click', () => {
       $('#modalName').textContent = card.dataset.name;
-      $('#modalMeta').textContent = `${card.dataset.exp} • ${card.dataset.cert}`;
+      $('#modalMeta').textContent = `${card.dataset.exp} - ${card.dataset.cert}`;
       $('#modalBio').textContent = card.dataset.bio;
       $('#trainerModal').classList.remove('hidden');
       $('#trainerModal').classList.add('grid');
@@ -951,4 +1195,10 @@ rel="noopener">
 window.addEventListener('load', loadGoogleMap);
   </script>
 </body>
+<!--ends-->
 </html>
+
+
+
+
+
